@@ -4,32 +4,38 @@ import './Burger.css';
 
 function BurgerFunction() {
 
+  const defaultPricing = 10;
+  const lettucePricing = 25;
+  const tomatoPricing = 50;
+  const cheesePricing = 150;
+  const meatPricing = 200;
+
   const [lettuce, setLettuce] = useState(0);
   const [tomato, setTomato] = useState(0);
   const [cheese, setCheese] = useState(0);
   const [meat, setMeat] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(10);
+  const [totalPrice, setTotalPrice] = useState(defaultPricing);
 
   const addIngredient = (item) => {
     switch(item){
       case 'lettuce':{
           setLettuce(lettuce + 1);
-          setTotalPrice(totalPrice + 25);
+          setTotalPrice(totalPrice + lettucePricing);
         break;
       }
       case 'tomato':{
           setTomato(tomato + 1);
-          setTotalPrice(totalPrice + 50);
+          setTotalPrice(totalPrice + tomatoPricing);
         break;
       }
       case 'cheese':{
           setCheese(cheese + 1);
-          setTotalPrice(totalPrice + 150);
+          setTotalPrice(totalPrice + cheesePricing);
         break;
       }
       case 'meat':{
           setMeat(meat + 1);
-          setTotalPrice(totalPrice + 200);
+          setTotalPrice(totalPrice + meatPricing);
         break;
       }
       default: break
@@ -40,22 +46,22 @@ function BurgerFunction() {
     switch(item){
       case 'lettuce':{
           setLettuce(lettuce - 1);
-          setTotalPrice(totalPrice - 25);
+          setTotalPrice(totalPrice - lettucePricing);
         break;
       }
       case 'tomato':{
           setTomato(tomato - 1);
-          setTotalPrice(totalPrice - 50);
+          setTotalPrice(totalPrice - tomatoPricing);
         break;
       }
       case 'cheese':{
           setCheese(cheese - 1);
-          setTotalPrice(totalPrice - 150);
+          setTotalPrice(totalPrice - cheesePricing);
         break;
       }
       case 'meat':{
           setMeat(meat - 1);
-          setTotalPrice(totalPrice - 200);
+          setTotalPrice(totalPrice - meatPricing);
         break;
       }
       default: break

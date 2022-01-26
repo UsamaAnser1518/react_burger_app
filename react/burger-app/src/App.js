@@ -1,12 +1,11 @@
 import './App.css';
-// import BurgerClass from './components/BurgerClass';
-import BurgerHeader from './components/BurgerHeader';
-import BurgerFunction from './components/BurgerFunction';
+import BurgerHeader from './components/BurgerHeader/BurgerHeader';
+import BurgerFunction from './components/Burger/Burger';
 // import LoginForm from './components/LoginForm';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
 
       {/* <LoginForm /> */}
 
