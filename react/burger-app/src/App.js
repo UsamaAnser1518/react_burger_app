@@ -1,4 +1,5 @@
 import './App.css';
+import { React } from 'react';
 import BurgerHeader from './components/BurgerHeader/BurgerHeader';
 import BurgerFunction from './components/Burger/Burger';
 // import LoginForm from './components/LoginForm';
@@ -11,7 +12,6 @@ function App() {
 
       <BurgerHeader />
       <BurgerFunction />
-
     </div>
   );
 }
