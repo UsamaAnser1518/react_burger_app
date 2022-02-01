@@ -1,13 +1,3 @@
-// const ADD_LETTUCE = 'ADD_LETTUCE';
-// const REMOVE_LETTUCE = 'REMOVE_LETTUCE'
-// const lettucePrice = 25;
-
-// const defaultLettuce =
-//   {
-//     lettuce: 0,
-//     totalLettucePrice: 0,
-//   };
-
 export const addLettuce = () =>
 {
   return{

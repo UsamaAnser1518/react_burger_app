@@ -57,16 +57,19 @@ export const NavigationItems = styled.ul`
   height: 100%;
 `;
 
-export const InnerItems = styled.a`
+export const InnerItems = styled.div`
   border: solid 1px brown;
+  background-color: coral;
   text-decoration: none;
-  color: #fff;
   padding: 15px;
   margin: 0 15px 0 0;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  list-style: none;
+
+  &:hover{
+    background-color: darksalmon;
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -75,5 +78,6 @@ export const HeaderContainer = styled.div`
 export const OuterItems = styled.li`
   display: flex;
 `;
+
 
 

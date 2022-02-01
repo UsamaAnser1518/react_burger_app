@@ -1,9 +1,3 @@
-// const tomatoPrice = 50;
-// const defaultTomato =
-//   {
-//     tomato: 0,
-//     totalTomatoPrice: 0,
-//   };
 export function addTomato()
 {
   return{

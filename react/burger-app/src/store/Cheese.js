@@ -1,10 +1,3 @@
-// const cheesePrice = 150;
-// const defaultCheese =
-//   {
-//     cheese: 0,
-//     totalCheesePrice: 0,
-//   };
-
 export function addCheese()
 {
   return{

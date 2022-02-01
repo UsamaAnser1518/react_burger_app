@@ -1,9 +1,3 @@
-// const meatPrice = 200;
-// const defaultMeat =
-//   {
-//     meat: 0,
-//     totalMeatPrice: 0,
-//   };
 export function addMeat()
 {
   return{

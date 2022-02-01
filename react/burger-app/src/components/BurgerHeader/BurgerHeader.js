@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeaderContainer, InnerItems, Logo, LogoFrame, NavigationItems, OuterItems, Toolbar } from './BurgerHeader.style';
+import { Link } from 'react-router-dom';
 
 
 function BurgerHeader() {
@@ -11,12 +12,16 @@ function BurgerHeader() {
         </LogoFrame>
         <nav>
           <NavigationItems>
-            <OuterItems >
-              <InnerItems href='/'>Burger Builder</InnerItems>
-            </OuterItems>
-            <OuterItems>
-              <InnerItems href='/LoginForm.js'>Login</InnerItems>
-            </OuterItems>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+              <OuterItems >
+                <InnerItems> Burger Builder</InnerItems>
+              </OuterItems>
+            </Link>
+            <Link to='/login' style={{ textDecoration: 'none', color: 'white' }}>
+              <OuterItems >
+                <InnerItems>Login</InnerItems>
+              </OuterItems>
+            </Link>
           </NavigationItems>
         </nav>
       </Toolbar>
