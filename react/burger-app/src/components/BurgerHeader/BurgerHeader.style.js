@@ -1,4 +1,8 @@
-.toolbar {
+import styled from "styled-components";
+import logo from '/home/dev/react/burger-app/src/assets/logo.png'
+
+
+export const Toolbar = styled.div`
   height: 80px;
   width: 100%;
   position: fixed;
@@ -9,24 +13,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+`;
 
-}
 
-.toolbarNav {
-  height: 100%;
-}
-
-.logo {
-  background-image: url(/src/assets/logo.png);
+export const Logo = styled.div`
+  background-image: url(${logo});
   background-size: 60px;
   width: 100%;
   height: 100%;
   background-position: left;
   background-repeat: no-repeat;
-}
+`;
 
-.logoFrame{
 
+export const LogoFrame = styled.div`
   border: 1px solid white;
   border-radius: 15%;
   background-color: white;
@@ -35,16 +35,19 @@
   height: 70% ;
   background-position: left;
   background-repeat: no-repeat;
-}
-.titleHeader{
+`;
+
+
+
+export const TitleHeader = styled.div`
   background-size: 60px;
   width: 100%;
   height: 100%;
   background-position: right;
   background-repeat: no-repeat;
-}
+`;
 
-.navigationItems{
+export const NavigationItems = styled.ul`
   color: #fff;
   flex-flow: row;
   margin: 25px;
@@ -52,9 +55,9 @@
   display: flex;
   align-items: center;
   height: 100%;
-}
+`;
 
-.innerItems{
+export const InnerItems = styled.a`
   border: solid 1px brown;
   text-decoration: none;
   color: #fff;
@@ -64,12 +67,13 @@
   display: block;
   width: 100%;
   list-style: none;
-}
+`;
 
-.outerItems{
-  margin: 0;
+export const HeaderContainer = styled.div`
+`;
+
+export const OuterItems = styled.li`
   display: flex;
-  height: 100%;
-  width: auto;
-  align-items: center;
-}
+`;
+
+

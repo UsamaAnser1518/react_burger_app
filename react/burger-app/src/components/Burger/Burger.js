@@ -5,15 +5,9 @@ import { addTomato, removeTomato } from '/home/dev/react/burger-app/src/store/To
 import { addCheese, removeCheese } from '/home/dev/react/burger-app/src/store/Cheese';
 import { addMeat, removeMeat } from '/home/dev/react/burger-app/src/store/Meat';
 import { addLettucePrice, removeLettucePrice, addTomatoPrice, removeTomatoPrice, addCheesePrice, removeCheesePrice, addMeatPrice, removeMeatPrice } from '/home/dev/react/burger-app/src/store/Price';
-import './Burger.css';
+import { BurgerContent, BurgerIngredient, BurgerBottom, BurgerTop, CheeseImage, IngredientBtn, IngredientBtns, IngredientsBlock, LettuceImage, MeatImage, PriceValue, TomatoImage } from './Burger.style';
 
 function BurgerFunction() {
-
-  // const defaultPricing = 10;
-  // const lettucePricing = 25;
-  // const tomatoPricing = 50;
-  // const cheesePricing = 150;
-  // const meatPricing = 200;
 
   const lettuce = useSelector((state) => state.myLettuce);
   const tomato = useSelector((state) => state.myTomato);
@@ -21,139 +15,67 @@ function BurgerFunction() {
   const meat = useSelector((state) => state.myMeat);
   const price = useSelector((state) => state.myPrice);
 
-
-// const price = useSelector((state) => state.totalPricing);
-
   const dispatch = useDispatch();
-
-
-
-
-
-
-
-  // const [lettuce, setLettuce] = useState(0);
-  // const [tomato, setTomato] = useState(0);
-  // const [cheese, setCheese] = useState(0);
-  // const [meat, setMeat] = useState(0);
-  // const [totalPrice, setTotalPrice] = useState(defaultPricing);
-
-  // const addIngredient = (item) => {
-  //   switch(item){
-  //     case 'lettuce':{
-  //         setLettuce(lettuce + 1);
-  //         setTotalPrice(totalPrice + lettucePricing);
-  //       break;
-  //     }
-  //     case 'tomato':{
-  //         setTomato(tomato + 1);
-  //         setTotalPrice(totalPrice + tomatoPricing);
-  //       break;
-  //     }
-  //     case 'cheese':{
-  //         setCheese(cheese + 1);
-  //         setTotalPrice(totalPrice + cheesePricing);
-  //       break;
-  //     }
-  //     case 'meat':{
-  //         setMeat(meat + 1);
-  //         setTotalPrice(totalPrice + meatPricing);
-  //       break;
-  //     }
-  //     default: break
-  //   }
-  // }
-
-  // const removeIngredient = (item) => {
-  //   switch(item){
-  //     case 'lettuce':{
-  //         setLettuce(lettuce - 1);
-  //         setTotalPrice(totalPrice - lettucePricing);
-  //       break;
-  //     }
-  //     case 'tomato':{
-  //         setTomato(tomato - 1);
-  //         setTotalPrice(totalPrice - tomatoPricing);
-  //       break;
-  //     }
-  //     case 'cheese':{
-  //         setCheese(cheese - 1);
-  //         setTotalPrice(totalPrice - cheesePricing);
-  //       break;
-  //     }
-  //     case 'meat':{
-  //         setMeat(meat - 1);
-  //         setTotalPrice(totalPrice - meatPricing);
-  //       break;
-  //     }
-  //     default: break
-  //   }
-  // }
-
-  if(lettuce< 0) setLettuce(0);
-  if(tomato< 0) setTomato(0);
-  if(cheese< 0) setCheese(0);
-  if(meat< 0) setMeat(0);
 
   function burgerContent() {
 
     let burger = [];
       for(let i = 0; i < lettuce; i++)
       {
-        burger.push(<div key={burger.length} className='lettuceImage'></div>);
+        burger.push(<LettuceImage key={burger.length}></LettuceImage>);
       }
 
       for(let i = 0; i < tomato; i++)
       {
-        burger.push(<div key={burger.length} className='tomatoImage'></div>);
+        burger.push(<TomatoImage key={burger.length}></TomatoImage>);
       }
 
       for(let i = 0; i < cheese; i++)
       {
-        burger.push(<div key={burger.length} className='cheeseImage'></div>);
+        burger.push(<CheeseImage key={burger.length}></CheeseImage>);
       }
 
       for(let i = 0; i < meat; i++)
       {
-        burger.push(<div key={burger.length} className='meatImage'></div>);
+        burger.push(<MeatImage key={burger.length}></MeatImage>);
       }
       return burger;
     }
 
   return (
-    <div className='burgerContent'>
-      <div className='burgerIngredient'>
-        <div className='burgerTop'></div>
+    <BurgerContent>
+      <BurgerIngredient>
+        <BurgerTop />
         {burgerContent()}
-        <div className='burgerBottom'></div>
-      </div>
+        <BurgerBottom />
+      </BurgerIngredient>
 
-      <div className='ingredientsBlock'>
+      <IngredientsBlock>
         <p>Price</p>
-        <p className='priceValue'>{price}</p>
+        <PriceValue>{price}</PriceValue>
 
         <p>Lettuce</p>
-          <div className='ingredientBtns'>
-            <button className= 'ingredientBtn ' onClick={() => { dispatch(addLettuce(lettuce)), dispatch(addLettucePrice(price)) }}>Add</button>
-            <button disabled={!lettuce} className= 'ingredientBtn' onClick={() => { dispatch(removeLettuce(lettuce)), dispatch(removeLettucePrice(price)) }}>Remove</button>
-          </div>
+          <IngredientBtns>
+            <IngredientBtn onClick={() => { dispatch(addLettuce(lettuce)), dispatch(addLettucePrice(price)) }}>Add</IngredientBtn>
+            <IngredientBtn disabled={!lettuce} onClick={() => { dispatch(removeLettuce(lettuce)), dispatch(removeLettucePrice(price)) }}>Remove</IngredientBtn>
+          </IngredientBtns>
           <p>Tomato</p>
-          <div className='ingredientBtns'>
-            <button className= 'ingredientBtn' onClick={() => { dispatch(addTomato(tomato)), dispatch(addTomatoPrice(price)) }}>Add</button>
-            <button disabled={!tomato} className= 'ingredientBtn' onClick={() => { dispatch(removeTomato(tomato)), dispatch(removeTomatoPrice(price)) }}>Remove</button>
-          </div>
+          <IngredientBtns>
+            <IngredientBtn onClick={() => { dispatch(addTomato(tomato)), dispatch(addTomatoPrice(price)) }}>Add</IngredientBtn>
+            <IngredientBtn disabled={!tomato} onClick={() => { dispatch(removeTomato(tomato)), dispatch(removeTomatoPrice(price)) }}>Remove</IngredientBtn>
+          </IngredientBtns>
           <p>Cheese</p>
-          <div className='ingredientBtns'>
-            <button className= 'ingredientBtn' onClick={() => { dispatch(addCheese(cheese)), dispatch(addCheesePrice(price)) }}>Add</button>
-            <button disabled={!cheese} className= 'ingredientBtn' onClick={() => { dispatch(removeCheese(cheese)), dispatch(removeCheesePrice(price)) }}>Remove</button>
-          </div>
+          <IngredientBtns>
+            <IngredientBtn onClick={() => { dispatch(addCheese(cheese)), dispatch(addCheesePrice(price)) }}>Add</IngredientBtn>
+            <IngredientBtn disabled={!cheese} onClick={() => { dispatch(removeCheese(cheese)), dispatch(removeCheesePrice(price)) }}>Remove</IngredientBtn>
+          </IngredientBtns>
           <p>Meat</p>
-          <div className='ingredientBtns'>
-            <button className= 'ingredientBtn' onClick={() => { dispatch(addMeat(meat)), dispatch(addMeatPrice(price)) }}>Add</button>
-            <button disabled={!meat} className= 'ingredientBtn' onClick={() => { dispatch(removeMeat(meat)), dispatch(removeMeatPrice(price)) }}>Remove</button>
-          </div>
-      </div>
-    </div>
+          <IngredientBtns>
+            <IngredientBtn onClick={() => { dispatch(addMeat(meat)), dispatch(addMeatPrice(price)) }}>Add</IngredientBtn>
+            <IngredientBtn disabled={!meat} onClick={() => { dispatch(removeMeat(meat)), dispatch(removeMeatPrice(price)) }}>Remove</IngredientBtn>
+          </IngredientBtns>
+      </IngredientsBlock>
+    </BurgerContent>
   );
 
 }

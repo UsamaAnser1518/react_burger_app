@@ -1,18 +1,18 @@
-import './App.css';
 import { React } from 'react';
 import BurgerHeader from './components/BurgerHeader/BurgerHeader';
 import BurgerFunction from './components/Burger/Burger';
+import { AppContainer } from './AppContainer.style';
 // import LoginForm from './components/LoginForm';
 
 function App() {
   return (
-    <div className='App'>
+    <AppContainer>
 
       {/* <LoginForm /> */}
 
       <BurgerHeader />
       <BurgerFunction />
-    </div>
+    </AppContainer>
   );
 }
 

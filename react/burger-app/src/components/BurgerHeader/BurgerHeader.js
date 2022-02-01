@@ -1,28 +1,26 @@
 import React from 'react';
-import './BurgerHeader.css';
+import { HeaderContainer, InnerItems, Logo, LogoFrame, NavigationItems, OuterItems, Toolbar } from './BurgerHeader.style';
 
 
 function BurgerHeader() {
   return (
-    <div>
-      <div className='toolbar'>
-        <div className='logoFrame'>
-          <div className='logo' />
-          {/* <div className='titleHeader'>Burger Builder</div> */}
-        </div>
+    <HeaderContainer>
+      <Toolbar>
+        <LogoFrame >
+          <Logo/>
+        </LogoFrame>
         <nav>
-          <ul className='navigationItems'>
-            <li className='outerItems'>
-              <a className='innerItems' href='/'>Burger Builder</a>
-            </li>
-            <li>
-              <a className='innerItems' href='/LoginForm.js'>Login</a>
-            </li>
-          </ul>
+          <NavigationItems>
+            <OuterItems >
+              <InnerItems href='/'>Burger Builder</InnerItems>
+            </OuterItems>
+            <OuterItems>
+              <InnerItems href='/LoginForm.js'>Login</InnerItems>
+            </OuterItems>
+          </NavigationItems>
         </nav>
-
-      </div>
-    </div>
+      </Toolbar>
+    </HeaderContainer>
   );
 }
 
